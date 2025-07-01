@@ -8,5 +8,6 @@ COPY . .
 RUN npm run build
 
 FROM nginx
+EXPOSE 80
 # COPY --from=builder >>> means that we copy in different phase
 COPY --from=builder /app/build /usr/share/nginx/html
